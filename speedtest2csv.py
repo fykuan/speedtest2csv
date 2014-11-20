@@ -4,8 +4,6 @@ import subprocess
 import re
 import time
 
-# 總是使用 2189 這台 speedtest server
-# 2189) TFN Media Co., Ltd. (Kaohsiung, Taiwan) [15.05 km]
 p = subprocess.Popen(["/usr/local/bin/speedtest-cli"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
 (out, err) = p.communicate()
