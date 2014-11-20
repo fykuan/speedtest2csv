@@ -19,7 +19,7 @@ currTime =  time.strftime("%c")
 remoteHostStr = remoteHost[0].replace(",", "")
 
 f = open('speedtest.csv', 'a+')
-f.write('"%s",%s,%s,%s,%s,%s\r\n' % (currTime, localIP[0], remoteHostStr, pingResult[0], downloadResult[0], uploadResult[0]))
+f.write('%s,%s,%s,%s,%s,%s\r\n' % (currTime, localIP[0], remoteHostStr, pingResult[0], downloadResult[0], uploadResult[0]))
 f.close()
 
 print "Ping: %s ms, IP: %s, Remote Host: %s, Download: %s Mbits/s, Upload %s Mbits/s" % (pingResult[0], localIP[0], remoteHostStr, downloadResult[0], uploadResult[0])
