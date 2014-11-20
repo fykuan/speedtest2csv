@@ -16,7 +16,7 @@ uploadResult = re.findall(r"Upload:\s(.*)\sMbits/s", out)
 
 currTime =  time.strftime("%c")
 
-f = open('speedtest_log.csv', 'a+')
+f = open('speedtest.csv', 'a+')
 f.write('"%s", %s, %s, %s\n' % (currTime, pingResult[0], downloadResult[0], uploadResult[0]))
 f.close()
 
