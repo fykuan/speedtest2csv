@@ -9,10 +9,10 @@ speed_test
 ### usage
 * crontab -e（每十五分鐘執行）
 
-        */15 * * * * cd /Users/allenkuan/github/speed_test && /usr/local/bin/python /Users/allenkuan/github/speed_test/speedtest.py > /dev/null 2>&1
+        */15 * * * * cd /Users/allenkuan/github/speedtest2csv && /usr/local/bin/python /Users/allenkuan/github/speedtest2csv/speedtest2csv.py > /dev/null 2>&1
         
 ### result
-* cat speedtest_log.csv
+* cat speedtest.csv
 
         "Thu Nov 20 13:15:40 2014", 68.204, 1.63, 2.14
         "Thu Nov 20 13:30:38 2014", 67.756, 1.44, 2.37
