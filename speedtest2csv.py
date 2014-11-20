@@ -6,18 +6,20 @@ import time
 
 # 總是使用 2189 這台 speedtest server
 # 2189) TFN Media Co., Ltd. (Kaohsiung, Taiwan) [15.05 km]
-p = subprocess.Popen(["/usr/local/bin/speedtest-cli", "--simple", "--server", "2189"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+p = subprocess.Popen(["/usr/local/bin/speedtest-cli"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
 (out, err) = p.communicate()
 
-pingResult = re.findall(r"Ping:\s(.*)\sms", out)
+localIP = re.findall(r"Testing from.*?\((.*)\)...", out)
+remoteHost = re.findall(r"by\s(.*)\s\[", out)
+pingResult = re.findall(r"km.:\s(.*)\sms", out)
 downloadResult = re.findall(r"Download:\s(.*)\sMbits/s", out)
 uploadResult = re.findall(r"Upload:\s(.*)\sMbits/s", out)
 
 currTime =  time.strftime("%c")
 
 f = open('speedtest.csv', 'a+')
-f.write('"%s", %s, %s, %s\n' % (currTime, pingResult[0], downloadResult[0], uploadResult[0]))
+f.write('"%s", %s, %s, %s, %s, %s\n' % (currTime, localIP[0], remoteHost[0], pingResult[0], downloadResult[0], uploadResult[0]))
 f.close()
 
-print "Ping: %s ms, Download: %s Mbits/s, Upload %s Mbits/s" % (pingResult[0], downloadResult[0], uploadResult[0])
+print "Ping: %s ms, IP: %s, Remote Host: %s, Download: %s Mbits/s, Upload %s Mbits/s" % (pingResult[0], localIP[0], remoteHost[0], downloadResult[0], uploadResult[0])
