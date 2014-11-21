@@ -1,4 +1,4 @@
-speed_test
+speedtest2csv
 ==========
 
 配合 crontab 定時執行 speedtest_cli，並將結果（時間、Local IP Address、使用的 speedtest node、ping、download、upload）寫入 CSV 供統計
