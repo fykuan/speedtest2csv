@@ -18,7 +18,7 @@ currTime =  time.strftime("%c")
 # 把 remoteHost 可能出現的逗號去掉
 remoteHostStr = remoteHost[0].replace(",", "")
 
-f = open('speedtest.csv', 'a+')
+f = open('speedtest_%s.csv' % time.strftime("%Y%m%d"), 'a+')
 f.write('%s,%s,%s,%s,%s,%s\r\n' % (currTime, localIP[0], remoteHostStr, pingResult[0], downloadResult[0], uploadResult[0]))
 f.close()
 
