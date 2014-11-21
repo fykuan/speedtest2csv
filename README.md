@@ -12,7 +12,7 @@ speed_test
         */15 * * * * cd /Users/allenkuan/github/speedtest2csv && /usr/local/bin/python /Users/allenkuan/github/speedtest2csv/speedtest2csv.py > /dev/null 2>&1
         
 ### result
-* cat speedtest.csv
+* cat speedtest_20141120.csv
 
         Thu Nov 20 21:30:29 2014,220.133.45.30,Asia Pacific Telecom (Taipei),9.5,34.11,17.48
         Thu Nov 20 21:45:31 2014,220.133.45.30,Taiwan Fixed Network (Taipei),10.315,55.63,16.1
